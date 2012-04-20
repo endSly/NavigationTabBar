@@ -8,30 +8,28 @@
 
 #import "EGTableController.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 @interface EGTableController ()
 
 @end
 
 @implementation EGTableController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize tableView = _tableView;
+@synthesize navigationTabBar = _navigationTabBar;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    _navigationTabBar.delegate = self;
+    _navigationTabBar.dataSource = self;
+    _navigationTabBar.clipsToBounds = NO;
+    _navigationTabBar.layer.shadowOpacity = 0.8;
+    _navigationTabBar.layer.shadowOffset = CGSizeZero;
+    
+    [_navigationTabBar initialize];
 }
 
 - (void)viewDidUnload
@@ -55,8 +53,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
     return 50;
 }
 
@@ -125,5 +121,45 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
+
+- (NSUInteger)navigationTabBarTabsCount:(EGNavigationTabBar *)tabBar
+{
+    return 4;
+}
+
+- (UIColor *)navigationTabBar:(EGNavigationTabBar *)tabBar colorForTabIndex:(NSUInteger)tabIndex
+{
+    switch (tabIndex) {
+        case 0:
+            return [UIColor redColor];
+        case 1:
+            return [UIColor colorWithRed:0.2 green:0.7 blue:0.1 alpha:1];
+        case 2:
+            return [UIColor colorWithRed:0.4 green:0.4 blue:0.9 alpha:1];
+        case 3:
+            return [UIColor grayColor];
+            
+    }
+    return nil;
+}
+
+- (NSString *)navigationTabBar:(EGNavigationTabBar *)tabBar titleForTabIndex:(NSUInteger)tabIndex
+{
+    switch (tabIndex) {
+        case 0:
+            return @"Que ver";
+        case 1:
+            return @"Que hacer";
+        case 2:
+            return @"Donde comer";
+        case 3:
+            return @"Donde dormir";
+            
+    }
+    return nil;
+}
+
 
 @end

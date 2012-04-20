@@ -16,14 +16,24 @@
 
 @implementation EGViewController
 
+@synthesize navigationTabBar = _navigationTabBar;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    self.navigationTabBar.clipsToBounds = NO;
-    self.navigationTabBar.layer.shadowOpacity = 0.8;
-    self.navigationTabBar.layer.shadowOffset = CGSizeZero;
+    EGNavigationTabBar *navigationTabBar = [[EGNavigationTabBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
     
+    
+    
+    self.navigationTabBar = navigationTabBar;
+    
+    [self.view addSubview:navigationTabBar];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    UIViewController *controller = [storyboard instantiateViewControllerWithIdentifier:@"Table"];
+    controller.view.frame = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height);
+    [self.view addSubview:controller.view];
 }
 
 - (void)viewDidUnload
@@ -74,10 +84,5 @@
     return nil;
 }
 
-- (UIViewController *)navigationTabBar:(EGNavigationTabBar *)tabBar viewControllerForTabIndex:(NSUInteger)tabIndex
-{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
-    return [storyboard instantiateViewControllerWithIdentifier:@"Table"];
-}
 
 @end

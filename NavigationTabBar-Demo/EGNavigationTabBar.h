@@ -18,13 +18,9 @@
     
     UIView  *_buttonsContainerView;
     NSMutableArray *_tabButtons;
-    NSMutableArray *_tabViewControllers;
     NSMutableArray *_tabButtonsOffset;
-    
-    UIViewController *_onScreenViewController;
 }
 
-@property (nonatomic, assign) UIViewController *parentViewController;
 @property (nonatomic, assign) id <EGNavigationTabBarDelegate> delegate;
 @property (nonatomic, assign) id <EGNavigationTabBarDataSource> dataSource;
 @property (nonatomic) NSUInteger selectedTabIndex;
@@ -43,7 +39,6 @@
 @required
 - (NSUInteger)navigationTabBarTabsCount:(EGNavigationTabBar *)tabBar;
 - (NSString *)navigationTabBar:(EGNavigationTabBar *)tabBar titleForTabIndex:(NSUInteger)tabIndex;
-- (UIViewController *)navigationTabBar:(EGNavigationTabBar *)tabBar viewControllerForTabIndex:(NSUInteger)tabIndex;
 
 @optional
 - (UIColor *)navigationTabBar:(EGNavigationTabBar *)tabBar colorForTabIndex:(NSUInteger)tabIndex;
@@ -53,8 +48,9 @@
 @protocol EGNavigationTabBarDelegate <NSObject>
 
 @optional
+- (void)navigationTabBar:(EGNavigationTabBar *)tabBar willSelectTabAtIndex:(NSUInteger)tabIndex;
 - (void)navigationTabBar:(EGNavigationTabBar *)tabBar didSelectTabAtIndex:(NSUInteger)tabIndex;
 - (void)navigationTabBarStartDragging:(EGNavigationTabBar *)tabBar;
-
+- (void)navigationTabBarAnimateTabChange:(EGNavigationTabBar *)tabBar;
 
 @end

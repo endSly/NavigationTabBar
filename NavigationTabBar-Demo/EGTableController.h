@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EGTableController : UITableViewController
+#import "EGNavigationTabBar.h"
+
+@interface EGTableController : UIViewController <UITableViewDataSource, UITableViewDelegate, EGNavigationTabBarDataSource, EGNavigationTabBarDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView * tableView;
+@property (nonatomic, weak) IBOutlet EGNavigationTabBar * navigationTabBar;
 
 @end

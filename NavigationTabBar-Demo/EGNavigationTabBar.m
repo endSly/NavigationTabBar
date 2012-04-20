@@ -18,7 +18,6 @@
 
 @implementation EGNavigationTabBar
 
-@synthesize parentViewController = _parentViewController;
 @synthesize delegate = _tabBarDelegate;
 @synthesize dataSource = _dataSource;
 @synthesize selectedTabIndex = _selectedTabIndex;
@@ -38,13 +37,14 @@
     
     _tabButtons = [NSMutableArray array];
     _tabButtonsOffset = [NSMutableArray array];
-    _tabViewControllers = [NSMutableArray array];
     
     _gestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)];
     _gestureRecognizer.delegate = self;
     [_buttonsContainerView addGestureRecognizer:_gestureRecognizer];
     
     _selectedTabIndex = -1;
+    
+    [self reloadData];
 }
 
 - (UIImage *)backgroundImage
@@ -88,11 +88,11 @@
 
 - (void)setSelectedTabIndex:(NSUInteger)selectedTabIndex
 {
-    if (_selectedTabIndex == selectedTabIndex)
-        return;
-    
-    NSUInteger lastSelected = _selectedTabIndex;
     _selectedTabIndex = selectedTabIndex;
+    
+    if ([self.delegate respondsToSelector:@selector(navigationTabBar:willSelectTabAtIndex:)]) {
+        [self.delegate navigationTabBar:self willSelectTabAtIndex:selectedTabIndex];
+    }
     
     for (UIButton *button in _tabButtons) {
         button.selected = NO;
@@ -100,20 +100,12 @@
     
     UIButton *button = (UIButton *) [_tabButtons objectAtIndex:selectedTabIndex];
     button.selected = YES;
-    
-    UIViewController *contentController = [self.dataSource navigationTabBar:self viewControllerForTabIndex:_selectedTabIndex];
-    contentController.view.frame = CGRectMake((lastSelected < _selectedTabIndex) ? 320 : -320, 
-                                              44, 
-                                              self.parentViewController.view.frame.size.width, 
-                                              self.parentViewController.view.frame.size.height - 44);
-    
-    contentController.view.layer.shadowOpacity = 1;
-    contentController.view.layer.shadowOffset = CGSizeZero;
-    contentController.view.layer.shadowRadius = 12;
-    
-    [self addSubview:contentController.view];
-    
+
     [UIView animateWithDuration:0.35f animations:^{
+        if ([self.delegate respondsToSelector:@selector(navigationTabBarAnimateTabChange:)]) {
+            [self.delegate navigationTabBarAnimateTabChange:self];
+        }
+        
         for (UIButton *otherButton in _tabButtons) {
             otherButton.titleLabel.layer.opacity = 0.6;
         }
@@ -125,26 +117,16 @@
         
         CGFloat offset = ((NSNumber *) [_tabButtonsOffset objectAtIndex:selectedTabIndex]).floatValue 
         + (((UIButton *) [_tabButtons objectAtIndex:0]).frame.size.width + 6) / 2.0;
+        
         _buttonsContainerView.frame = CGRectMake(offset, 0, 
                                                  _buttonsContainerView.frame.size.width,
                                                  _buttonsContainerView.frame.size.height);
-        
-        
-        _onScreenViewController.view.frame = CGRectMake((lastSelected < _selectedTabIndex) ? -320 : 320, 
-                                                  44, 
-                                                  self.parentViewController.view.frame.size.width, 
-                                                  self.parentViewController.view.frame.size.height - 44);
-        
-        contentController.view.frame = CGRectMake(0, 
-                                                  44, 
-                                                  self.parentViewController.view.frame.size.width, 
-                                                  self.parentViewController.view.frame.size.height - 44);
-        
-        
+        NSLog(@"%f", offset);
         
     } completion:^(BOOL finished) {
-        [_onScreenViewController.view removeFromSuperview];
-        _onScreenViewController = contentController;
+        if ([self.delegate respondsToSelector:@selector(navigationTabBar:didSelectTabAtIndex:)]) {
+            [self.delegate navigationTabBar:self didSelectTabAtIndex:selectedTabIndex];
+        }
     }];
 }
 
@@ -164,6 +146,8 @@
         }
     }
     
+    buttonIndex = MIN(buttonIndex, _tabButtonsOffset.count - 1);
+    
     self.selectedTabIndex = buttonIndex;
 }
 
@@ -172,6 +156,10 @@
     switch (recognizer.state) {
         case UIGestureRecognizerStateBegan:
             _originPosition = _buttonsContainerView.frame.origin.x;
+            
+            if ([self.delegate respondsToSelector:@selector(navigationTabBarStartDragging:)]) {
+                [self.delegate navigationTabBarStartDragging:self];
+            }
             break;
             
         case UIGestureRecognizerStateChanged:
@@ -202,12 +190,6 @@
     }
     [_tabButtons removeAllObjects];
     [_tabButtonsOffset removeAllObjects];
-    
-    // Clear view controllers
-    for (UIButton *tab in _tabViewControllers) {
-        [tab removeFromSuperview];
-    }
-    [_tabViewControllers removeAllObjects];
     
     // Put buttons in correct location
     NSUInteger tabsCount = [self.dataSource navigationTabBarTabsCount:self];

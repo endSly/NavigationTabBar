@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "NavigationTabBar-Demo/EGViewController.m"
-         timestampString = "356610256.824289"
+         timestampString = "356621449.650252"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-navigationTabBar:titleForTabIndex:"
          landmarkType = "5">
       </FileBreakpoint>
