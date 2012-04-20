@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D79752A1540137400F4A2CE /* UIColor+Transition.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7975291540137400F4A2CE /* UIColor+Transition.m */; };
+		0D7F63791540829D0051EBE9 /* BarBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F63771540829D0051EBE9 /* BarBackButton@2x.png */; };
+		0D7F637A1540829D0051EBE9 /* BarBackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D7F63781540829D0051EBE9 /* BarBackButton.png */; };
 		0D822DBF154006D80003081F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D822DBE154006D80003081F /* UIKit.framework */; };
 		0D822DC1154006D80003081F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D822DC0154006D80003081F /* Foundation.framework */; };
 		0D822DC3154006D80003081F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D822DC2154006D80003081F /* CoreGraphics.framework */; };
@@ -15,22 +18,37 @@
 		0D822DCF154006D80003081F /* EGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D822DCE154006D80003081F /* EGAppDelegate.m */; };
 		0D822DD2154006D80003081F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D822DD0154006D80003081F /* MainStoryboard.storyboard */; };
 		0D822DD5154006D80003081F /* EGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D822DD4154006D80003081F /* EGViewController.m */; };
+		0D822DDE1540074B0003081F /* EGNavigationTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D822DDD1540074B0003081F /* EGNavigationTabBar.m */; };
+		0DE01C631540A60B00F3144C /* NavBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C611540A60B00F3144C /* NavBarBackground.png */; };
+		0DE01C641540A60B00F3144C /* NavBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C621540A60B00F3144C /* NavBarBackground@2x.png */; };
+		0DE01C681540ABDA00F3144C /* SelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C661540ABDA00F3144C /* SelectedBackground.png */; };
+		0DE01C691540ABDA00F3144C /* SelectedBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C671540ABDA00F3144C /* SelectedBackground@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D7975281540137400F4A2CE /* UIColor+Transition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Transition.h"; path = "EGNavigationTabBar/UIColor+Transition.h"; sourceTree = "<group>"; };
+		0D7975291540137400F4A2CE /* UIColor+Transition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Transition.m"; path = "EGNavigationTabBar/UIColor+Transition.m"; sourceTree = "<group>"; };
+		0D7F63771540829D0051EBE9 /* BarBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BarBackButton@2x.png"; sourceTree = "<group>"; };
+		0D7F63781540829D0051EBE9 /* BarBackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BarBackButton.png; sourceTree = "<group>"; };
 		0D822DBA154006D80003081F /* NavigationTabBar-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NavigationTabBar-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D822DBE154006D80003081F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0D822DC0154006D80003081F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0D822DC2154006D80003081F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0D822DC6154006D80003081F /* NavigationTabBar-Demo-Info.plist */ = {isa = PBXFileReference; path = "NavigationTabBar-Demo-Info.plist"; sourceTree = "<group>"; };
+		0D822DC6154006D80003081F /* NavigationTabBar-Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NavigationTabBar-Demo-Info.plist"; sourceTree = "<group>"; };
 		0D822DC8154006D80003081F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0D822DCA154006D80003081F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0D822DCC154006D80003081F /* NavigationTabBar-Demo-Prefix.pch */ = {isa = PBXFileReference; path = "NavigationTabBar-Demo-Prefix.pch"; sourceTree = "<group>"; };
-		0D822DCD154006D80003081F /* EGAppDelegate.h */ = {isa = PBXFileReference; path = EGAppDelegate.h; sourceTree = "<group>"; };
+		0D822DCC154006D80003081F /* NavigationTabBar-Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NavigationTabBar-Demo-Prefix.pch"; sourceTree = "<group>"; };
+		0D822DCD154006D80003081F /* EGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGAppDelegate.h; sourceTree = "<group>"; };
 		0D822DCE154006D80003081F /* EGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGAppDelegate.m; sourceTree = "<group>"; };
 		0D822DD1154006D80003081F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		0D822DD3154006D80003081F /* EGViewController.h */ = {isa = PBXFileReference; path = EGViewController.h; sourceTree = "<group>"; };
+		0D822DD3154006D80003081F /* EGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EGViewController.h; sourceTree = "<group>"; };
 		0D822DD4154006D80003081F /* EGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGViewController.m; sourceTree = "<group>"; };
+		0D822DDC1540074B0003081F /* EGNavigationTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGNavigationTabBar.h; sourceTree = "<group>"; };
+		0D822DDD1540074B0003081F /* EGNavigationTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGNavigationTabBar.m; sourceTree = "<group>"; };
+		0DE01C611540A60B00F3144C /* NavBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarBackground.png; sourceTree = "<group>"; };
+		0DE01C621540A60B00F3144C /* NavBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarBackground@2x.png"; sourceTree = "<group>"; };
+		0DE01C661540ABDA00F3144C /* SelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedBackground.png; sourceTree = "<group>"; };
+		0DE01C671540ABDA00F3144C /* SelectedBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SelectedBackground@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +68,12 @@
 		0D822DAF154006D80003081F = {
 			isa = PBXGroup;
 			children = (
+				0D7F63771540829D0051EBE9 /* BarBackButton@2x.png */,
+				0D7F63781540829D0051EBE9 /* BarBackButton.png */,
+				0DE01C661540ABDA00F3144C /* SelectedBackground.png */,
+				0DE01C671540ABDA00F3144C /* SelectedBackground@2x.png */,
+				0DE01C611540A60B00F3144C /* NavBarBackground.png */,
+				0DE01C621540A60B00F3144C /* NavBarBackground@2x.png */,
 				0D822DC4154006D80003081F /* NavigationTabBar-Demo */,
 				0D822DBD154006D80003081F /* Frameworks */,
 				0D822DBB154006D80003081F /* Products */,
@@ -77,6 +101,7 @@
 		0D822DC4154006D80003081F /* NavigationTabBar-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0D822DDB154006F40003081F /* EGNavigationTabBar */,
 				0D822DCD154006D80003081F /* EGAppDelegate.h */,
 				0D822DCE154006D80003081F /* EGAppDelegate.m */,
 				0D822DD0154006D80003081F /* MainStoryboard.storyboard */,
@@ -96,6 +121,17 @@
 				0D822DCC154006D80003081F /* NavigationTabBar-Demo-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0D822DDB154006F40003081F /* EGNavigationTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0D822DDC1540074B0003081F /* EGNavigationTabBar.h */,
+				0D822DDD1540074B0003081F /* EGNavigationTabBar.m */,
+				0D7975281540137400F4A2CE /* UIColor+Transition.h */,
+				0D7975291540137400F4A2CE /* UIColor+Transition.m */,
+			);
+			name = EGNavigationTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +187,12 @@
 			files = (
 				0D822DC9154006D80003081F /* InfoPlist.strings in Resources */,
 				0D822DD2154006D80003081F /* MainStoryboard.storyboard in Resources */,
+				0D7F63791540829D0051EBE9 /* BarBackButton@2x.png in Resources */,
+				0D7F637A1540829D0051EBE9 /* BarBackButton.png in Resources */,
+				0DE01C631540A60B00F3144C /* NavBarBackground.png in Resources */,
+				0DE01C641540A60B00F3144C /* NavBarBackground@2x.png in Resources */,
+				0DE01C681540ABDA00F3144C /* SelectedBackground.png in Resources */,
+				0DE01C691540ABDA00F3144C /* SelectedBackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +206,8 @@
 				0D822DCB154006D80003081F /* main.m in Sources */,
 				0D822DCF154006D80003081F /* EGAppDelegate.m in Sources */,
 				0D822DD5154006D80003081F /* EGViewController.m in Sources */,
+				0D822DDE1540074B0003081F /* EGNavigationTabBar.m in Sources */,
+				0D79752A1540137400F4A2CE /* UIColor+Transition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +319,7 @@
 				0D822DDA154006D80003081F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
