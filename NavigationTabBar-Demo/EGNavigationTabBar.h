@@ -20,8 +20,11 @@
     NSMutableArray *_tabButtons;
     NSMutableArray *_tabViewControllers;
     NSMutableArray *_tabButtonsOffset;
+    
+    UIViewController *_onScreenViewController;
 }
 
+@property (nonatomic, assign) UIViewController *parentViewController;
 @property (nonatomic, assign) id <EGNavigationTabBarDelegate> delegate;
 @property (nonatomic, assign) id <EGNavigationTabBarDataSource> dataSource;
 @property (nonatomic) NSUInteger selectedTabIndex;
@@ -30,6 +33,7 @@
 @property (nonatomic, retain) IBOutlet UINavigationController * navigationController;
 @property (nonatomic, readonly) UIPanGestureRecognizer * gestureRecognizer;
 
+- (void)initialize;
 - (void)reloadData;
 
 @end

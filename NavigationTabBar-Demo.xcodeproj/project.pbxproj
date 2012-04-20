@@ -19,6 +19,8 @@
 		0D822DD2154006D80003081F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D822DD0154006D80003081F /* MainStoryboard.storyboard */; };
 		0D822DD5154006D80003081F /* EGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D822DD4154006D80003081F /* EGViewController.m */; };
 		0D822DDE1540074B0003081F /* EGNavigationTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D822DDD1540074B0003081F /* EGNavigationTabBar.m */; };
+		0DD0742F1541676D00FB4637 /* EGNavigationTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD0742E1541676D00FB4637 /* EGNavigationTabBarController.m */; };
+		0DD074331541694500FB4637 /* EGTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD074321541694500FB4637 /* EGTableController.m */; };
 		0DE01C631540A60B00F3144C /* NavBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C611540A60B00F3144C /* NavBarBackground.png */; };
 		0DE01C641540A60B00F3144C /* NavBarBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C621540A60B00F3144C /* NavBarBackground@2x.png */; };
 		0DE01C681540ABDA00F3144C /* SelectedBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DE01C661540ABDA00F3144C /* SelectedBackground.png */; };
@@ -45,6 +47,10 @@
 		0D822DD4154006D80003081F /* EGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EGViewController.m; sourceTree = "<group>"; };
 		0D822DDC1540074B0003081F /* EGNavigationTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGNavigationTabBar.h; sourceTree = "<group>"; };
 		0D822DDD1540074B0003081F /* EGNavigationTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGNavigationTabBar.m; sourceTree = "<group>"; };
+		0DD0742D1541676D00FB4637 /* EGNavigationTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EGNavigationTabBarController.h; path = EGNavigationTabBar/EGNavigationTabBarController.h; sourceTree = "<group>"; };
+		0DD0742E1541676D00FB4637 /* EGNavigationTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EGNavigationTabBarController.m; path = EGNavigationTabBar/EGNavigationTabBarController.m; sourceTree = "<group>"; };
+		0DD074311541694500FB4637 /* EGTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGTableController.h; sourceTree = "<group>"; };
+		0DD074321541694500FB4637 /* EGTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGTableController.m; sourceTree = "<group>"; };
 		0DE01C611540A60B00F3144C /* NavBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NavBarBackground.png; sourceTree = "<group>"; };
 		0DE01C621540A60B00F3144C /* NavBarBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NavBarBackground@2x.png"; sourceTree = "<group>"; };
 		0DE01C661540ABDA00F3144C /* SelectedBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SelectedBackground.png; sourceTree = "<group>"; };
@@ -107,6 +113,8 @@
 				0D822DD0154006D80003081F /* MainStoryboard.storyboard */,
 				0D822DD3154006D80003081F /* EGViewController.h */,
 				0D822DD4154006D80003081F /* EGViewController.m */,
+				0DD074311541694500FB4637 /* EGTableController.h */,
+				0DD074321541694500FB4637 /* EGTableController.m */,
 				0D822DC5154006D80003081F /* Supporting Files */,
 			);
 			path = "NavigationTabBar-Demo";
@@ -128,6 +136,8 @@
 			children = (
 				0D822DDC1540074B0003081F /* EGNavigationTabBar.h */,
 				0D822DDD1540074B0003081F /* EGNavigationTabBar.m */,
+				0DD0742D1541676D00FB4637 /* EGNavigationTabBarController.h */,
+				0DD0742E1541676D00FB4637 /* EGNavigationTabBarController.m */,
 				0D7975281540137400F4A2CE /* UIColor+Transition.h */,
 				0D7975291540137400F4A2CE /* UIColor+Transition.m */,
 			);
@@ -208,6 +218,8 @@
 				0D822DD5154006D80003081F /* EGViewController.m in Sources */,
 				0D822DDE1540074B0003081F /* EGNavigationTabBar.m in Sources */,
 				0D79752A1540137400F4A2CE /* UIColor+Transition.m in Sources */,
+				0DD0742F1541676D00FB4637 /* EGNavigationTabBarController.m in Sources */,
+				0DD074331541694500FB4637 /* EGTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

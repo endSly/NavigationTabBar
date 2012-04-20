@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import "EGNavigationTabBar.h"
+#import "EGNavigationTabBarController.h"
 
-@interface EGViewController : UIViewController <EGNavigationTabBarDataSource, EGNavigationTabBarDelegate> 
 
-@property (nonatomic, assign) IBOutlet EGNavigationTabBar * tabBar;
+@interface EGViewController : EGNavigationTabBarController
 
 @end

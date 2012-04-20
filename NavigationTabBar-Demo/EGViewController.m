@@ -16,20 +16,14 @@
 
 @implementation EGViewController
 
-@synthesize tabBar;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-    self.tabBar.dataSource = self;
-    self.tabBar.delegate = self;
+
+    self.navigationTabBar.clipsToBounds = NO;
+    self.navigationTabBar.layer.shadowOpacity = 0.8;
+    self.navigationTabBar.layer.shadowOffset = CGSizeZero;
     
-    self.tabBar.clipsToBounds = NO;
-    self.tabBar.layer.shadowOpacity = 0.8;
-    self.tabBar.layer.shadowOffset = CGSizeZero;
-    
-    [self.tabBar reloadData];
 }
 
 - (void)viewDidUnload
@@ -48,6 +42,22 @@
     return 4;
 }
 
+- (UIColor *)navigationTabBar:(EGNavigationTabBar *)tabBar colorForTabIndex:(NSUInteger)tabIndex
+{
+    switch (tabIndex) {
+        case 0:
+            return [UIColor redColor];
+        case 1:
+            return [UIColor colorWithRed:0.2 green:0.7 blue:0.1 alpha:1];
+        case 2:
+            return [UIColor colorWithRed:0.4 green:0.4 blue:0.9 alpha:1];
+        case 3:
+            return [UIColor grayColor];
+            
+    }
+    return nil;
+}
+
 - (NSString *)navigationTabBar:(EGNavigationTabBar *)tabBar titleForTabIndex:(NSUInteger)tabIndex
 {
     switch (tabIndex) {
@@ -61,12 +71,13 @@
             return @"Donde dormir";
             
     }
-    return @"";
+    return nil;
 }
 
 - (UIViewController *)navigationTabBar:(EGNavigationTabBar *)tabBar viewControllerForTabIndex:(NSUInteger)tabIndex
 {
-    return nil;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil];
+    return [storyboard instantiateViewControllerWithIdentifier:@"Table"];
 }
 
 @end
